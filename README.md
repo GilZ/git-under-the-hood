@@ -12,7 +12,17 @@ What are we going to talk about
 1. Git flow
 1. Git hooks & .gitignore (if time will allow)
 
+________________________________________________
+
 What aren't we going to talk about
 ----------------------------------
 * Working with Source Tree
 * The meaning of the command: `git log -i -E -5 -F --no-min-parents --all -g --pretty=format:"%cd %cn %ci %T %ai"` (or: RTFM)
+
+________________________________________________
+
+What is a branch?
+-----------------
+* A branch is just a pointer to a commit
+* It is saved as a file in the .git/refs/heads folder
+* Demo: create a new branch using a text editor
