@@ -62,19 +62,30 @@ What is HEAD?
 Merge techniques
 ----------------
 
-* There are 3 (major) merge techniques in git:
- 1. *Fast forward*: This is the default technique. Try to add the merged sub tree as commits on top of the existing commits:
-    `echo "master" > master.txt && git add --all && git commit -am "Commit example 1"`
-    `git checkout -b ff-branch && echo "ff" > ff.txt && git add --all && git commit -am "Commit example 2"`
-    `git checkout master && echo "master" >> master.txt && git add --all && git commit -am "Commit example 3"`
-    `git merge ff-branch && git l`
- 2. *No fast forward*: This method will force git to create a merge commit - A commit with 2 (or more) parents:
-    `echo "master" > master2.txt && git add --all && git commit -am "Commit example 4"`
-    `git checkout -b noff-branch && echo "noff" > noff.txt && git add --all && git commit -am "Commit example 5"`
-    `git checkout master && echo "master" >> master2.txt && git add --all && git commit -am "Commit example 6"`
-    `git merge --no-ff noff-branch && git l`
- 3. *Rebase* When using rebase, the changed from the other branch are _fast-forwarded_, and afterwards the changed from the current branched are _replayed_ one by one
-    `echo "master" > master3.txt && git add --all && git commit -am "Commit example 7"`
-    `git checkout -b rebase-branch && echo "rebase" > rebase.txt && git add --all && git commit -am "Commit example 8"`
-    `git checkout master && echo "master" >> master3.txt && git add --all && git commit -am "Commit example 9"`
-    `git rebase rebase-branch && git l`
+* There are 3 (major) merge techniques in git: *fast forward*, *no fast forward* and *rebase*.
+
+---
+
+1. *Fast forward*: This is the default technique. Try to add the merged sub tree as commits on top of the existing commits:
+`echo "master" > master.txt && git add --all && git commit -am "Commit example 1"`
+`git checkout -b ff-branch && echo "ff" > ff.txt && git add --all && git commit -am "Commit example 2"`
+`git merge ff-branch && git l`
+
+---
+
+2. *No fast forward*: This method will force git to create a merge commit - A commit with 2 (or more) parents:
+`echo "master" > master2.txt && git add --all && git commit -am "Commit example 4"`
+`git checkout -b noff-branch && echo "noff" > noff.txt && git add --all && git commit -am "Commit example 5"`
+`git checkout master && echo "master" >> master2.txt && git add --all && git commit -am "Commit example 6"`
+`git merge --no-ff noff-branch && git l`
+
+---
+
+3. *Rebase* When using rebase, the changed from the other branch are _fast-forwarded_, and afterwards the changed from the current branched are _replayed_ one by one
+`echo "master" > master3.txt && git add --all && git commit -am "Commit example 7"`
+`git checkout -b rebase-branch && echo "rebase" > rebase.txt && git add --all && git commit -am "Commit example 8"`
+`git checkout master && echo "master" >> master3.txt && git add --all && git commit -am "Commit example 9"`
+`git rebase rebase-branch && git l`
+
+---
+
