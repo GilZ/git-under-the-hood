@@ -14,7 +14,7 @@ What are we going to talk about
 1. *What is a commit*
 1. *What is HEAD* (and how to checkout using a text editor)
 1. *Merge techniques* (or what is the difference between --rebase and --no-ff)
-1. *Working with remote repository* (or what is the difference between origin master and origin/master)
+1. *Working with remote repositories* (or what is the difference between origin master and origin/master)
 1. *Git flow*
 1. *Git hooks, .gitignore and aliases* (if time will allow)
 
@@ -88,4 +88,52 @@ Merge techniques
 `git rebase rebase-branch && git l`
 
 ---
+
+Working with remote repositories
+--------------------------------
+
+* Git is a distributed SCM, and doesn't need a central server.
+* Commands that communicate with a remote host (e.g. `pull`, `push`, `fetch`, etc.) can get a host name as a parameter
+ * We can think of it like a dialog: `git pull origin master`
+  - Hi `git`
+  - *What?*
+  - `pull`
+  - *From where?*
+  - From `origin`
+  - *What should I `pull`?*
+  - `master`
+  - *OK*
+
+---
+
+Working with remote repositories (cont.)
+----------------------------------------
+
+* Some commands update local copies of the remote references: `cat .git/refs/remotes/origin/master`
+* Commands that can work on references (e.g. `merge`, `log`, `checkout`, etc.) can use these references like any other
+ * Again, we can think of it like a dialog: `git merge origin/master`
+  - Hi `git`
+  - *What?*
+  - `merge`
+  - *From where?*
+  - From `origin/master`
+  - *OK*
+  - Thank you
+  - *You're welcome*
+
+---
+
+Working with remote repositories (cont.)
+----------------------------------------
+
+* As mentioned earlier, git allows us to work with more than one remote server
+* School example: Bob is the remote for Alice, Alice is the remote for Charlie and Eve
+* Real world example: working on an open source project:
+ * Fork the original repository in GitHub
+ * Clone a local copy of your repository
+ * Commit and push to your repository, but pull from the original repository to keep it up-to-date
+ 
+---
+
+
 
