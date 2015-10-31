@@ -132,8 +132,17 @@ Working with remote repositories (cont.)
  * Fork the original repository in GitHub
  * Clone a local copy of your repository
  * Commit and push to your repository, but pull from the original repository to keep it up-to-date
- 
+
 ---
 
+Git flow
+--------
+http://nvie.com/img/git-model@2x.png
+
+---
+
+Aliases
+-------
+[My gitconfig file with all my cool aliases](./.gitconfig)
 
 
