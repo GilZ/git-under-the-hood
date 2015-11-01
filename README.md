@@ -50,7 +50,38 @@ What is a branch?
 
 What is a commit?
 -----------------
-* TODO
+
+* A commit is a file that contains metadata about the change and references to its tree objects
+^
+* Huh?
+^
+* A tree object is the basic git data structure. It can be either a collection of references to other tree objects, or a blob.
+^
+* Huh?
+^
+* You can think of it like folders and files. It usually helps.
+* For each of these objects, a hash is computed (using sha-1), and this hash key is used to reference that object.
+`ls -la .git/objects`
+
+---
+
+What is a commit? (cont.)
+-------------------------
+
+* So, a commit holds:
+ * references to all the tree objects that represent the difference between the previous commit(s) and this one
+ * Some metadata about the commit itself
+^
+* OK...
+^
+* Would you like to see an example?
+^
+* YES!
+^
+~~~
+git show master --raw
+git show master
+~~~
 
 ---
 
