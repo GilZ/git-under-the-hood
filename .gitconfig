@@ -35,8 +35,9 @@
 	pu = push
     ch = cherry-pick
     bda = branch --merged | grep -v '^* master$' | grep -v '^  master$' | xargs git branch -d
-	release-log = !git fetch && git l origin/master..origin/dev --merges
-	next-release = !git fetch && git l origin/master..origin/dev --merges
+    next-release = !git fetch && git l origin/master..origin/dev --merges
+    pd = pull --rebase origin dev
+    cd = checkout dev
 
 [giggle]
 	main-window-maximized = true
